@@ -38,5 +38,6 @@ Route::middleware([
         return Inertia::render('Admin/Calendar/Calendar');
     })->name('calendar');
     Route::resource('/events', \App\Http\Controllers\EventController::class);
+    Route::resource('/messages', \App\Http\Controllers\Admin\AnonymousBoxController::class);
 });
 

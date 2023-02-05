@@ -1,5 +1,10 @@
 <template>
     <AppLayout>
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Calendar
+            </h2>
+        </template>
         <div class="p-9">
             <div>
                 <h1 class="text-xl font-bold">Events Dashboard</h1>

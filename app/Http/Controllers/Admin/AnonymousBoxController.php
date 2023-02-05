@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Public;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AnonymousBoxResource;
 use App\Models\AnonymousBox;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
-class AnonBoxController extends Controller
+class AnonymousBoxController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,8 @@ class AnonBoxController extends Controller
      */
     public function index()
     {
-
-        return Inertia::render('Public/AnonBox/AnonBox');
+        $messages = AnonymousBoxResource::collection(AnonymousBox::latest('created_at')->get());
+        return Inertia::render('Admin/AnonymousBox/Index', compact('messages'));
     }
 
     /**
@@ -39,10 +40,7 @@ class AnonBoxController extends Controller
      */
     public function store(Request $request)
     {
-        AnonymousBox::create([
-            'messages'=>$request->messages,
-        ]);
-        return Inertia::render('Public/AnonBox/MessSuccess');
+        //
     }
 
     /**
@@ -85,8 +83,9 @@ class AnonBoxController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(AnonymousBox $message)
     {
-        //
+        $message->delete();
+        return Redirect::back();
     }
 }

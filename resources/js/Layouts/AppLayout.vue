@@ -42,7 +42,7 @@ const logout = () => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationMark class="block h-9 w-auto" />
+                                    <img class="h-12" src="/images/it-logo-vector.png">
                                 </Link>
                             </div>
 
@@ -55,6 +55,11 @@ const logout = () => {
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink :href="route('calendar')" :active="route().current('calendar')">
                                     Calendar
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink :href="route('messages.index')" :active="route().current('messages.index')">
+                                    Anonymous messages
                                 </NavLink>
                             </div>
                         </div>
