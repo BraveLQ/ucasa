@@ -1,12 +1,22 @@
 <template>
-<calendar></calendar>
+    <main class="max-w-full h-full flex relative overflow-y-hidden">
+        <!-- Container -->
+        <landing></landing>
+
+    </main>
 </template>
 
 <script>
-import Calendar from "@/Pages/Calendar.vue";
+import TextAnimation from "@/Components/TextAnimation.vue";
+import Landing from "@/Components/Landing.vue";
 export default {
     name: "EntryPoint",
-    components: {Calendar}
+    components: {Landing, TextAnimation, },
+    data() {
+        return {
+            showMenu: false,
+        };
+    },
 }
 </script>
 

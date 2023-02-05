@@ -19,10 +19,10 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::class);
+
 
 Route::middleware([
     'auth:sanctum',
