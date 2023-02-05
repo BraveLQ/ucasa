@@ -10,7 +10,6 @@ import TextInput from '@/Components/TextInput.vue';
 import PublucLayout from "@/Pages/Public/Layout/PublucLayout.vue";
 
 defineProps({
-    canResetPassword: Boolean,
     status: String,
 });
 
@@ -35,7 +34,10 @@ const submit = () => {
     <publuc-layout>
         <AuthenticationCard>
             <template #logo>
-                <AuthenticationCardLogo />
+                <div class="flex gap-2">
+                    <img class="h-24" src="/images/it-logo-vector.png">
+                    <h1 class="font-bold my-auto text-xl">Powered by UCA CODED Club</h1>
+                </div>
             </template>
 
             <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
@@ -77,9 +79,6 @@ const submit = () => {
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                        Forgot your password?
-                    </Link>
 
                     <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Log in

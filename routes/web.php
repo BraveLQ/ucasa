@@ -22,6 +22,7 @@ Route::get('/', function () {
     ]);
 });
 Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::class);
+Route::resource('/home', \App\Http\Controllers\Public\HomeController::class);
 
 
 Route::middleware([

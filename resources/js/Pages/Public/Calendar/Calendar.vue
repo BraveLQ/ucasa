@@ -1,5 +1,5 @@
 <template>
-    <div class="px-32">
+    <div class="px-12">
         <full-calendar :options="calendarOptions"></full-calendar>
     </div>
 </template>
