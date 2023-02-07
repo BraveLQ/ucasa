@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CalendarResource;
-use App\Models\Calendar;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class CalendarController extends Controller
+class SettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,7 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        $events = CalendarResource::collection(Calendar::all());
-        return Inertia::render('Public/Calendar/Index',compact('events'));
+        return Inertia::render('Public/Settings/Index');
     }
 
     /**

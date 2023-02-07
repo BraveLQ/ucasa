@@ -1,6 +1,6 @@
 <template>
-        <landing class="pt-8" ></landing>
-        <front-cards></front-cards>
+        <landing class="pt-5" ></landing>
+        <front-cards class="pb-4"></front-cards>
 </template>
 
 <script>

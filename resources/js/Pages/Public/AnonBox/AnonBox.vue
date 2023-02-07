@@ -1,6 +1,6 @@
 <template>
 <publuc-layout>
-    <div class="px-12 py-12">
+    <div class="px-3 mb-10">
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h2 class="text-2xl font-bold mb-2 text-gray-800">Anonymous Box</h2>
             <p class="text-gray-700">Your messages 100% anonymous and encrypted!</p>
