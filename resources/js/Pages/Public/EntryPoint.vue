@@ -3,24 +3,13 @@
         <front-cards class="pb-4"></front-cards>
 </template>
 
-<script>
-import TextAnimation from "@/Components/TextAnimation.vue";
+<script setup>
 import Landing from "@/Components/Landing.vue";
 import FrontCards from "@/Components/FrontCards.vue";
-export default {
-    name: "EntryPoint",
-    components: {FrontCards, Landing, TextAnimation, },
-    data() {
-        return {
-            showMenu: false,
-        };
-    },
-}
+
+
 </script>
 
 <style scoped>
-/* Hide scrollbar for Chrome, Safari and Opera */
-.scroll::-webkit-scrollbar {
-    display: none;
-}
+
 </style>

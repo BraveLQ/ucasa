@@ -4,7 +4,7 @@
             <!-- Section: Design Block -->
             <section class="mb-10">
 
-                <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-lg" style="background-position: 50%; background-image: url('https://blogs.ubc.ca/eescourses/files/2017/11/Tajik2017-FJset1-043_resize.jpg'); height: 500px;"></div>
+                <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-lg bg-[url('/images/bg.jpg')]" style="background-position: 50%; height: 500px;"></div>
 
                 <div class="container mx-auto px-6 md:px-12 xl:px-32">
                     <div class="text-center text-gray-800">

@@ -1,7 +1,7 @@
 <template>
 <publuc-layout>
     <div class="px-3">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-10">
             <h2 class="text-2xl font-bold mb-2 text-gray-800">Settings</h2>
             <p class="text-gray-700">You have no permission for the App settings</p>
         </div>

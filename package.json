@@ -24,6 +24,7 @@
         "@fullcalendar/daygrid": "^6.1.1",
         "@fullcalendar/interaction": "^6.1.1",
         "@fullcalendar/vue3": "^6.1.2",
+        "postscribe": "^2.0.8",
         "tw-elements": "^1.0.0-alpha13"
     }
 }
