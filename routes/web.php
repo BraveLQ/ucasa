@@ -25,6 +25,7 @@ Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::c
 Route::resource('/home', \App\Http\Controllers\Public\HomeController::class);
 Route::resource('/anonymousbox', \App\Http\Controllers\Public\AnonBoxController::class);
 Route::resource('/settings', \App\Http\Controllers\Public\SettingsController::class);
+Route::resource('/gym', \App\Http\Controllers\GymController::class);
 
 
 Route::middleware([
@@ -32,6 +33,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    Route::get('/auth', ['App\Http\Controllers\HomeController', 'index']);
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');

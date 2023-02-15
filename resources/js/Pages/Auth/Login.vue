@@ -32,7 +32,7 @@ const submit = () => {
 <template>
     <Head title="Log in" />
     <publuc-layout>
-        <AuthenticationCard>
+        <AuthenticationCard class="">
             <template #logo>
                 <div class="flex gap-2">
                     <img class="h-24" src="/images/it-logo-vector.png">
@@ -79,7 +79,9 @@ const submit = () => {
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-
+                    <Link :href="route('register')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                        Register Now
+                    </Link>
                     <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Log in
                     </PrimaryButton>
