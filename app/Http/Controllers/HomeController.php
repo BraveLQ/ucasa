@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $role =Auth::user()->role;
-        if($role=='1')
-        {
-            return Inertia::render('Dashboard');
+    public function checkUserType(){
+        if (Auth::user()->role === 1){
+            return redirect()->route('dashboard');
         }
-//        if($role=='2')
-//        {
-//            return Inertia::render('ClubLeaders/Welcome');
-//        }
+        if (Auth::user()->role === 0){
+            return  redirect(route('home.index'));
+        }
         else
         {
-            return Inertia::render('Welcome');
+            return redirect()->route('login');
         }
     }
 }

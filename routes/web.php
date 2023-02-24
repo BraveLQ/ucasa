@@ -21,19 +21,24 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
     ]);
 });
+//Route::get('/', [\App\Http\Controllers\HomeController::class, 'checkUserType']);
+
+//User routes
 Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::class);
 Route::resource('/home', \App\Http\Controllers\Public\HomeController::class);
 Route::resource('/anonymousbox', \App\Http\Controllers\Public\AnonBoxController::class);
 Route::resource('/settings', \App\Http\Controllers\Public\SettingsController::class);
 Route::resource('/gym', \App\Http\Controllers\GymController::class);
-
-
+Route::resource('instagram', \App\Http\Controllers\InstaController::class);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/auth', ['App\Http\Controllers\HomeController', 'index']);
+
+
+
+    //Admin routes
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
@@ -42,5 +47,6 @@ Route::middleware([
     })->name('calendar');
     Route::resource('/events', \App\Http\Controllers\EventController::class);
     Route::resource('/messages', \App\Http\Controllers\Admin\AnonymousBoxController::class);
+    Route::resource('/clubs', \App\Http\Controllers\Admin\ClubsController::class);
 });
 
