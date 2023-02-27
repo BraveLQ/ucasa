@@ -41,6 +41,7 @@ class ClubsController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
            'title'=>['required', 'min:2'],
            'logo'=>['required', 'image'],

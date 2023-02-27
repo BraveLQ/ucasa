@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('members');
             $table->string('banner');
             $table->string('email');
-            $table->string('description');
+            $table->longText('description');
             $table->timestamps();
         });
     }
