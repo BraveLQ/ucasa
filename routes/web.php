@@ -23,22 +23,21 @@ Route::get('/', function () {
 });
 //Route::get('/', [\App\Http\Controllers\HomeController::class, 'checkUserType']);
 
-//User routes
-Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::class);
-Route::resource('/home', \App\Http\Controllers\Public\HomeController::class);
-Route::resource('/anonymousbox', \App\Http\Controllers\Public\AnonBoxController::class);
-Route::resource('/settings', \App\Http\Controllers\Public\SettingsController::class);
-Route::resource('/gym', \App\Http\Controllers\GymController::class);
-Route::resource('/instagram', \App\Http\Controllers\InstaController::class);
-Route::resource('/club', \App\Http\Controllers\Public\ClubsController::class);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-
-
-
+    //User routes
+    Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::class);
+    Route::resource('/home', \App\Http\Controllers\Public\HomeController::class);
+    Route::resource('/anonymousbox', \App\Http\Controllers\Public\AnonBoxController::class);
+    Route::resource('/settings', \App\Http\Controllers\Public\SettingsController::class);
+    Route::resource('/gym', \App\Http\Controllers\GymController::class);
+    Route::resource('/instagram', \App\Http\Controllers\InstaController::class);
+    Route::resource('/club', \App\Http\Controllers\Public\ClubsController::class);
+});
+Route::middleware(['auth','role:admin'])->group(function (){
     //Admin routes
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
