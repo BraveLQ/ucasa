@@ -16,7 +16,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
     ]);
@@ -29,8 +29,8 @@ Route::middleware([
     'verified',
 ])->group(function () {
     //User routes
-    Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::class);
     Route::resource('/home', \App\Http\Controllers\Public\HomeController::class);
+    Route::resource('/calendars', \App\Http\Controllers\Public\CalendarController::class);
     Route::resource('/anonymousbox', \App\Http\Controllers\Public\AnonBoxController::class);
     Route::resource('/settings', \App\Http\Controllers\Public\SettingsController::class);
     Route::resource('/gym', \App\Http\Controllers\GymController::class);

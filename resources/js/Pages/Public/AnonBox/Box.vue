@@ -3,11 +3,6 @@
     <div class="px-2">
         <div class=" w-full bg-gray-800 rounded-2xl transform -translate-y-5 px">
             <section class="flex p-3 border-b border-gray-600">
-                <div class="mr-1">
-                    <img class="rounded-full"
-                         src="https://pbs.twimg.com/profile_images/1366772608373387269/K6En5xnu_normal.jpg"
-                         alt="Profile Picture">
-                </div>
                 <h1 class="text-white my-auto ml-3 font-bold text-xl">Box</h1>
             </section>
             <section class="w-full flex px-3 py-2">
